@@ -1,0 +1,96 @@
+{
+  "mcpServers": {
+    "enforced-filesystem": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\scripts\\mcp_enforcement_proxy.py",
+        "--policy",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\policies\\limited_network.yaml",
+        "--server-name",
+        "filesystem",
+        "--log",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\logs\\live_fs.jsonl",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer"
+      ]
+    },
+    "enforced-fetch": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\scripts\\mcp_enforcement_proxy.py",
+        "--policy",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\policies\\limited_network.yaml",
+        "--server-name",
+        "fetch",
+        "--log",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\logs\\live_fetch.jsonl",
+        "--",
+        "python",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\servers\\real_fetch_server.py"
+      ]
+    },
+    "enforced-git": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\scripts\\mcp_enforcement_proxy.py",
+        "--policy",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\policies\\limited_network.yaml",
+        "--server-name",
+        "git",
+        "--log",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\logs\\live_git.jsonl",
+        "--",
+        "python",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\servers\\real_git_server.py"
+      ]
+    },
+    "enforced-terminal": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\scripts\\mcp_enforcement_proxy.py",
+        "--policy",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\policies\\limited_network.yaml",
+        "--server-name",
+        "terminal",
+        "--log",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\logs\\live_terminal.jsonl",
+        "--",
+        "python",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\servers\\real_shell_server.py"
+      ]
+    },
+    "enforced-env": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\scripts\\mcp_enforcement_proxy.py",
+        "--policy",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\policies\\limited_network.yaml",
+        "--server-name",
+        "env",
+        "--log",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\logs\\live_env.jsonl",
+        "--",
+        "python",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\servers\\real_shell_server.py"
+      ]
+    },
+    "enforced-process": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\scripts\\mcp_enforcement_proxy.py",
+        "--policy",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\policies\\limited_network.yaml",
+        "--server-name",
+        "process",
+        "--log",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\logs\\live_process.jsonl",
+        "--",
+        "python",
+        "C:\\Users\\as\\PycharmProjects\\PythonResearchProject_comparision\\_mcp_zip_extract\\mcp_permission_layer\\servers\\real_shell_server.py"
+      ]
+    }
+  }
+}

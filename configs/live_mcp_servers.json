@@ -1,0 +1,77 @@
+{
+  "workspace_root": ".",
+  "policy": "policies/limited_network.yaml",
+  "servers": {
+    "filesystem": {
+      "command": "python",
+      "args": [
+        "scripts/mcp_enforcement_proxy.py",
+        "--policy", "policies/limited_network.yaml",
+        "--server-name", "filesystem",
+        "--log", "logs/live_fs.jsonl",
+        "--",
+        "npx", "-y", "@modelcontextprotocol/server-filesystem",
+        "${WORKSPACE}"
+      ]
+    },
+    "fetch": {
+      "command": "python",
+      "args": [
+        "scripts/mcp_enforcement_proxy.py",
+        "--policy", "policies/limited_network.yaml",
+        "--server-name", "fetch",
+        "--log", "logs/live_fetch.jsonl",
+        "--",
+        "python", "servers/real_fetch_server.py"
+      ]
+    },
+    "git": {
+      "command": "python",
+      "args": [
+        "scripts/mcp_enforcement_proxy.py",
+        "--policy", "policies/limited_network.yaml",
+        "--server-name", "git",
+        "--log", "logs/live_git.jsonl",
+        "--",
+        "python", "servers/real_git_server.py"
+      ]
+    },
+    "terminal": {
+      "command": "python",
+      "args": [
+        "scripts/mcp_enforcement_proxy.py",
+        "--policy", "policies/limited_network.yaml",
+        "--server-name", "terminal",
+        "--log", "logs/live_terminal.jsonl",
+        "--",
+        "python", "servers/real_shell_server.py"
+      ]
+    },
+    "env": {
+      "command": "python",
+      "args": [
+        "scripts/mcp_enforcement_proxy.py",
+        "--policy", "policies/limited_network.yaml",
+        "--server-name", "env",
+        "--log", "logs/live_env.jsonl",
+        "--",
+        "python", "servers/real_shell_server.py"
+      ]
+    },
+    "process": {
+      "command": "python",
+      "args": [
+        "scripts/mcp_enforcement_proxy.py",
+        "--policy", "policies/limited_network.yaml",
+        "--server-name", "process",
+        "--log", "logs/live_process.jsonl",
+        "--",
+        "python", "servers/real_shell_server.py"
+      ]
+    }
+  },
+  "tool_name_map": {
+    "list_dir": "list_directory",
+    "view_file": "read_file"
+  }
+}

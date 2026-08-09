@@ -1,0 +1,24 @@
+name: "no-code-exec"
+version: "1.0"
+description: "Development-friendly – read/write + network, no execution"
+
+default: deny
+
+permissions:
+  fs.read:
+    allow: true
+
+  fs.write:
+    allow: true
+
+  net.http:
+    allow: true
+
+  code.exec:
+    allow: false
+
+  env.read:
+    allow: false
+
+  process:
+    allow: false

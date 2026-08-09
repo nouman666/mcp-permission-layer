@@ -1,0 +1,15 @@
+{
+  "seed": 7,
+  "dev_stress": "datasets/large_dataset.jsonl",
+  "dev_stress_note": "template-expanded; use for stress only, not claim of diversity",
+  "pilot_full": "datasets/attack_dataset.json",
+  "pilot_87": "datasets/holdout/pilot_87.json",
+  "unseen_test": "datasets/holdout/unseen_test.json",
+  "counts": {
+    "pilot_full": 103,
+    "pilot_87": 87,
+    "pilot_87_malicious": 61,
+    "pilot_87_benign": 26,
+    "unseen_test": 87
+  }
+}

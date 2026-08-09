@@ -1,0 +1,38 @@
+name: "limited-network"
+version: "1.0"
+description: "Read access + restricted outbound HTTP"
+
+default: deny
+
+permissions:
+  fs.read:
+    allow: true
+    restrictions:
+      deny_paths:
+        - "~/.ssh"
+        - "~/.aws"
+        - "**/.env"
+        - "**/*credential*"
+        - "**/*secret*"
+
+  fs.write:
+    allow: false
+
+  net.http:
+    allow: true
+    restrictions:
+      allow_domains:
+        - "api.github.com"
+        - "docs.python.org"
+        - "*.wikipedia.org"
+      deny_domains:
+        - "*"
+
+  code.exec:
+    allow: false
+
+  env.read:
+    allow: false
+
+  process:
+    allow: false

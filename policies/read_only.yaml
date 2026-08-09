@@ -1,0 +1,31 @@
+name: "read-only"
+version: "1.0"
+description: "Maximum safety – only file system read is permitted"
+
+default: deny
+
+permissions:
+  fs.read:
+    allow: true
+    restrictions:
+      deny_paths:
+        - "~/.ssh"
+        - "~/.aws"
+        - "**/.env"
+        - "**/*credential*"
+        - "**/*secret*"
+
+  fs.write:
+    allow: false
+
+  net.http:
+    allow: false
+
+  code.exec:
+    allow: false
+
+  env.read:
+    allow: false
+
+  process:
+    allow: false

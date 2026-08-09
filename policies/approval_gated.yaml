@@ -1,0 +1,27 @@
+name: "approval-gated"
+version: "1.0"
+description: "Most actions allowed; high-risk actions require confirmation"
+
+default: deny
+
+permissions:
+  fs.read:
+    allow: true
+
+  fs.write:
+    allow: true
+    mode: ask
+
+  net.http:
+    allow: true
+
+  code.exec:
+    allow: true
+    mode: ask
+
+  env.read:
+    allow: true
+    mode: ask
+
+  process:
+    allow: false
