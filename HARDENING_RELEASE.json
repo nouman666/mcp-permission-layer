@@ -1,0 +1,11 @@
+{
+  "revision": "published-package-2026-09-29",
+  "base_source_commit": "725c0e64db4feae93b62a83c4221c61ea8e9a332",
+  "original_source_commit": "9d9c714a93357232159d1b036ee32fbe43445156",
+  "repository": "https://github.com/nouman666/mcp-permission-layer",
+  "source_identity_note": "The enclosing GitHub commit pins the published archive; base_source_commit does not include all later additions.",
+  "recorded_automated_tests": 79,
+  "recorded_controlled_live_assertions": 12,
+  "publication_validation": "Packaging and checksum verification only; no new experimental run claimed.",
+  "evidence_status": "See PUBLICATION_STATUS.md"
+}
