@@ -5,9 +5,9 @@ from __future__ import annotations
 import urllib.error
 import urllib.request
 
-from mcp.server import MCPServer
+from mcp.server.fastmcp import FastMCP
 
-server = MCPServer("real-fetch")
+server = FastMCP("real-fetch")
 
 
 def _fetch(url: str, max_chars: int = 4000) -> str:
@@ -28,7 +28,7 @@ def http_request(url: str) -> str:
     try:
         return _fetch(url)
     except Exception as e:
-        return f"ERROR: {e}"
+        raise RuntimeError(str(e)) from e
 
 
 @server.tool(name="fetch", description="Fetch URL content")

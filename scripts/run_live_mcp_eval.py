@@ -29,6 +29,7 @@ sys.path.insert(0, str(ROOT))
 from mcp import ClientSession, StdioServerParameters  # noqa: E402
 from mcp.client.stdio import stdio_client  # noqa: E402
 
+from live_outcomes import classify_result
 from metrics import confusion_counts, derive_rates  # noqa: E402
 
 CONFIG_PATH = ROOT / "configs" / "live_mcp_servers.json"
@@ -99,10 +100,9 @@ class LiveMCPPool:
             return self.tool_map.get(tool_name, tool_name)
         return tool_name
 
-    async def call(self, server: str, tool_name: str, arguments: dict) -> tuple[str, bool, float]:
-        """
-        Returns (outcome allow|deny, is_error_or_denied, latency_ms)
-        allow = forwarded and upstream did not permission-deny
+    async def call(self, server: str, tool_name: str, arguments: dict) -> tuple[dict, float]:
+        """Return proxy authorization, protocol execution outcome and latency.
+        Neither authorization nor a successful response proves task completion.
         """
         if server not in self.sessions:
             raise KeyError(f"Unknown server {server}")
@@ -113,16 +113,13 @@ class LiveMCPPool:
             mapped = "list_dir"
 
         t0 = time.perf_counter()
-        result = await session.call_tool(mapped, arguments or {})
-        latency = (time.perf_counter() - t0) * 1000.0
-
-        text = ""
-        for block in result.content or []:
-            text += getattr(block, "text", "") or str(block)
-        denied = bool(getattr(result, "is_error", False)) and "PERMISSION DENIED" in text
-        # If proxy denied → treat as deny (blocked). Else allow (tool executed / attempted).
-        outcome = "deny" if denied else "allow"
-        return outcome, denied, latency
+        try:
+            result = await session.call_tool(mapped, arguments or {})
+            outcome = classify_result(result)
+        except Exception as exc:
+            outcome = {"authorization": "unknown", "execution": "transport_error",
+                       "is_error": True, "error_type": type(exc).__name__}
+        return outcome, (time.perf_counter() - t0) * 1000.0
 
 
 async def evaluate_live(profiles: list[str] | None = None) -> dict:
@@ -171,10 +168,10 @@ async def evaluate_live(profiles: list[str] | None = None) -> dict:
             for case in cases:
                 server = case["server"]
                 # route env/process/terminal to shell-backed servers
-                outcome, denied, lat = await pool.call(
+                outcome, lat = await pool.call(
                     server, case["tool_name"], case.get("arguments") or {}
                 )
-                allowed = outcome == "allow"
+                allowed = outcome["authorization"] == "allow"
                 y_pred.append(allowed)
                 latencies.append(lat)
                 details.append({
@@ -186,10 +183,15 @@ async def evaluate_live(profiles: list[str] | None = None) -> dict:
                     "latency_ms": round(lat, 3),
                     "poisoned": bool(case.get("poisoned_description")),
                 })
-                mark = "ALLOW" if allowed else "DENY"
+                mark = outcome["authorization"].upper()
                 print(f"  {case['id']:<8} {mark:<5} {server}/{case['tool_name']}")
 
-        rates = derive_rates(confusion_counts(y_true, y_pred))
+        # Never count an unknown transport/protocol outcome as a blocked attack.
+        known = [i for i, d in enumerate(details) if d["outcome"]["authorization"] != "unknown"]
+        rates = derive_rates(confusion_counts([y_true[i] for i in known], [y_pred[i] for i in known]))
+        rates["authorization_coverage"] = len(known) / len(cases) if cases else 0.0
+        rates["unknown_outcomes"] = len(cases) - len(known)
+        rates["metric_scope"] = "Authorization only on known trusted-proxy outcomes; not task success"
         rates["latency_mean_ms"] = sum(latencies) / len(latencies) if latencies else 0.0
         rates["details"] = details
         report["profiles"][profile] = rates
@@ -202,16 +204,16 @@ async def evaluate_live(profiles: list[str] | None = None) -> dict:
     md = ["# Live Real MCP Deployment Results\n"]
     md.append(f"_Path: `{report['path']}`_\n")
     md.append(f"_Servers: {', '.join(report['servers'])}_\n")
-    md.append("| Defense | ASR (%) | Block (%) | TSR (%) | F1 (%) | Latency ms |")
+    md.append("| Defense | ASR (%) | Block (%) | BCAR (%) | F1 (%) | Latency ms |")
     md.append("|---------|---------|-----------|---------|--------|------------|")
     b0 = report["no_defense"]
     md.append(
-        f"| B0_no_defense | {b0['asr']:.2f} | {b0['block_rate']:.2f} | {b0['tsr']:.2f} | "
+        f"| B0_no_defense | {b0['asr']:.2f} | {b0['block_rate']:.2f} | {b0['bcar']:.2f} | "
         f"{b0['f1']:.2f} | n/a |"
     )
     for profile, r in report["profiles"].items():
         md.append(
-            f"| B4_{profile} | {r['asr']:.2f} | {r['block_rate']:.2f} | {r['tsr']:.2f} | "
+            f"| B4_{profile} | {r['asr']:.2f} | {r['block_rate']:.2f} | {r['bcar']:.2f} | "
             f"{r['f1']:.2f} | {r['latency_mean_ms']:.3f} |"
         )
     md_path = RESULTS / "LIVE_MCP_TABLE.md"

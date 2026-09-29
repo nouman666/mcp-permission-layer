@@ -108,14 +108,16 @@ class PolicyManager:
 
         permissions: dict[str, CategoryRule] = {}
         for cat, rule_raw in perms_raw.items():
+            if cat not in {"fs.read", "fs.write", "net.http", "code.exec", "env.read", "process"}:
+                raise PolicyError(f"Unknown permission category: {cat}")
             permissions[cat] = self._parse_rule(cat, rule_raw)
 
         # optional sensitive paths (can also live under global)
         sensitive = raw.get("sensitive_paths", [])
         if "global" in raw and isinstance(raw["global"], dict):
             sensitive = raw["global"].get("sensitive_paths", sensitive)
-        if not isinstance(sensitive, list):
-            sensitive = []
+        if not isinstance(sensitive, list) or not all(isinstance(x, str) for x in sensitive):
+            raise PolicyError("sensitive_paths must be a list of strings")
 
         return Policy(
             name=name,
@@ -136,7 +138,9 @@ class PolicyManager:
         if not isinstance(raw, dict):
             raise PolicyError(f"Rule for '{category}' must be a mapping or bool")
 
-        allow = bool(raw.get("allow", False))
+        allow = raw.get("allow", False)
+        if type(allow) is not bool:
+            raise PolicyError(f"allow for {category} must be a YAML boolean")
 
         mode_raw = str(raw.get("mode", "allow")).lower()
         if mode_raw not in ("allow", "deny", "ask"):
@@ -145,7 +149,13 @@ class PolicyManager:
 
         restrictions = raw.get("restrictions", {})
         if not isinstance(restrictions, dict):
-            restrictions = {}
+            raise PolicyError("restrictions must be a mapping")
+        unknown = set(restrictions) - {"deny_paths", "allow_paths", "deny_domains", "allow_domains"}
+        if unknown:
+            raise PolicyError(f"Unknown restrictions: {sorted(unknown)}")
+        for key, values in restrictions.items():
+            if not isinstance(values, list) or not all(isinstance(x, str) for x in values):
+                raise PolicyError(f"{key} must be a list of strings")
 
         return CategoryRule(
             allow=allow,

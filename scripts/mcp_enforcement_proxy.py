@@ -31,6 +31,8 @@ from mcp.client.stdio import stdio_client  # noqa: E402
 from mcp.server.lowlevel.server import Server  # noqa: E402
 from mcp.server.stdio import stdio_server  # noqa: E402
 
+from checker import PermissionChecker
+from live_outcomes import stamp_result
 from models import Decision  # noqa: E402
 from proxy import EnforcementProxy, always_deny_ask_handler  # noqa: E402
 
@@ -81,6 +83,7 @@ async def run_proxy(args: argparse.Namespace) -> None:
     )
     enforcer = EnforcementProxy(
         policy_path=args.policy,
+        checker=PermissionChecker(path_root=Path.cwd()),
         log_path=args.log,
         ask_handler=ask_handler,
     )
@@ -91,11 +94,12 @@ async def run_proxy(args: argparse.Namespace) -> None:
         async with ClientSession(up_read, up_write) as upstream:
             await upstream.initialize()
 
-            async def on_list_tools(ctx, params):
+            async def on_list_tools(request):
                 result = await upstream.list_tools()
-                return types.ListToolsResult(tools=result.tools)
+                return types.ServerResult(result)
 
-            async def on_call_tool(ctx, params):
+            async def on_call_tool(request):
+                params = request.params
                 name = params.name
                 arguments = dict(params.arguments or {})
                 decision, record = enforcer.handle_tool_call(
@@ -110,19 +114,26 @@ async def run_proxy(args: argparse.Namespace) -> None:
                         f"categories={sorted(record.inferred_categories)}, "
                         f"high_risk={record.high_risk})"
                     )
-                    return types.CallToolResult(
+                    return types.ServerResult(stamp_result(types.CallToolResult(
                         content=[types.TextContent(type="text", text=msg)],
-                        is_error=True,
-                    )
+                        isError=True,
+                    ), "deny", "not_forwarded"))
 
                 # Forward to real upstream MCP server
-                return await upstream.call_tool(name, arguments)
+                try:
+                    result = await upstream.call_tool(name, arguments)
+                except Exception:
+                    result = types.CallToolResult(
+                        content=[types.TextContent(type="text", text="Upstream MCP request failed")],
+                        isError=True,
+                    )
+                    return types.ServerResult(stamp_result(result, "allow", "transport_error"))
+                return types.ServerResult(stamp_result(result, "allow",
+                    "upstream_error" if result.isError else "upstream_ok"))
 
-            app = Server(
-                f"enforced-{args.server_name}",
-                on_list_tools=on_list_tools,
-                on_call_tool=on_call_tool,
-            )
+            app = Server(f"enforced-{args.server_name}")
+            app.request_handlers[types.ListToolsRequest] = on_list_tools
+            app.request_handlers[types.CallToolRequest] = on_call_tool
 
             init = app.create_initialization_options()
             async with stdio_server() as (client_read, client_write):

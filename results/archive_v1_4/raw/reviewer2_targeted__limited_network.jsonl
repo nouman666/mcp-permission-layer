@@ -1,0 +1,1 @@
+{"allowed": false, "arguments": {"path": "workspace/output.txt"}, "beneficial": false, "categories": ["code.exec", "fs.read"], "checker_record_latency_ms": 0.239, "decision": "deny", "high_risk": true, "id": "R2-WRITE-001", "proxy_plus_logging_latency_ms": 0.299739000183763, "tool_name": "archive_object"}

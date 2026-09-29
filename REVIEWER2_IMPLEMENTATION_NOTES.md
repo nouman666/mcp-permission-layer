@@ -1,0 +1,10 @@
+# Reviewer 2 implementation notes
+
+- **Comment 1 — trust assumptions:** manuscript threat model now states that inferred permissions authorize observable requests and assumes faithful upstream operation semantics; arbitrary hidden malicious-server behaviour requires server confinement.
+- **Comment 2 — renamed write regression:** `datasets/reviewer2_targeted_cases.json`, `tests/test_inference.py`, and `tests/test_checker.py` test `archive_object({"path":"workspace/output.txt"})`. Because write intent is unresolved, the call receives the conservative uncertainty surrogate and is denied under limited-network.
+- **Comment 3 — organic baselines:** `scripts/run_revision_evaluation.py` reports frozen B1–B4 on the untouched organic hold-out; manuscript wording treats the result as a security/utility trade-off, not unqualified superiority.
+- **Comment 4 — provenance/adaptive protocol:** `datasets/PROVENANCE.md` documents organic construction/labels/separation and the exact white-box boundary-suite attempt/feedback protocol.
+- **Comment 5 — live BCAR difference:** the three benign calls are RM-004 (Python docs HTTP), RM-005 (GitHub API HTTP), and RM-009 (Wikipedia HTTP). Limited-network permits allow-listed `net.http`; read-only denies all `net.http`. The difference is not due to writes.
+- **Comment 6 — ASK/latency:** the manuscript states that the old ~50.4 ms came from an artificial fixed delay in the submitted deterministic ASK procedure and was not human decision time; the revised study removes it. Revised latency metadata records host, repetitions, operation counts, and timed boundaries.
+- **Comment 7 — release/reproduction:** release `v1.2-r2`, pinned Python dependencies, pinned filesystem-server config for future live reruns, exact reproduction commands, raw decisions, and checksums are included. The original archived live npm server version was not recorded and is explicitly disclosed rather than reconstructed.
+- **Comment 8 — presentation:** manuscript Table 10 labels use “Without ...”; Figure 5 shows Phase A/B/C stages; Figure 8 legend is moved outside the bars; English corrections are applied.

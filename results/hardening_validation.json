@@ -1,0 +1,347 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "tool discovery over actual MCP transport",
+      "passed": true
+    },
+    {
+      "check": "benign two-read workflow final output",
+      "passed": true
+    },
+    {
+      "check": "denial uses protocol isError and proxy metadata",
+      "passed": true
+    },
+    {
+      "check": "denied write has no side effect",
+      "passed": true
+    },
+    {
+      "check": "denied write has no upstream receipt",
+      "passed": true
+    },
+    {
+      "check": "upstream error preserved and distinguished from denial",
+      "passed": true
+    },
+    {
+      "check": "all four routed calls audited",
+      "passed": true
+    },
+    {
+      "check": "only three allowed calls received upstream",
+      "passed": true
+    },
+    {
+      "check": "benign write-read workflow output and disk content",
+      "passed": true
+    },
+    {
+      "check": "execution boundary blocks symlink write",
+      "passed": true
+    },
+    {
+      "check": "ASK defaults to denial without upstream execution",
+      "passed": true
+    },
+    {
+      "check": "upstream crash produces failure, no successful response",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "limited_network": {
+      "audit": [
+        {
+          "timestamp": "2026-09-29T15:52:43.323464+00:00",
+          "tool_name": "read_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/a.txt"
+          },
+          "inferred_categories": [
+            "fs.read"
+          ],
+          "inference_reasons": {
+            "fs.read": [
+              "name:read_file",
+              "arg_path_read:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.read": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 1.198,
+          "policy_name": "limited-network"
+        },
+        {
+          "timestamp": "2026-09-29T15:52:43.328768+00:00",
+          "tool_name": "read_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/b.txt"
+          },
+          "inferred_categories": [
+            "fs.read"
+          ],
+          "inference_reasons": {
+            "fs.read": [
+              "name:read_file",
+              "arg_path_read:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.read": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 0.293,
+          "policy_name": "limited-network"
+        },
+        {
+          "timestamp": "2026-09-29T15:52:43.333217+00:00",
+          "tool_name": "write_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/out.txt",
+            "content": "blocked"
+          },
+          "inferred_categories": [
+            "fs.write"
+          ],
+          "inference_reasons": {
+            "fs.write": [
+              "name:write_file",
+              "arg_path_write:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.write": "deny"
+          },
+          "final_decision": "deny",
+          "latency_ms": 0.237,
+          "policy_name": "limited-network"
+        },
+        {
+          "timestamp": "2026-09-29T15:52:43.334500+00:00",
+          "tool_name": "read_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/missing.txt"
+          },
+          "inferred_categories": [
+            "fs.read"
+          ],
+          "inference_reasons": {
+            "fs.read": [
+              "name:read_file",
+              "arg_path_read:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.read": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 0.268,
+          "policy_name": "limited-network"
+        }
+      ],
+      "upstream_receipts": [
+        {
+          "tool": "read_file",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/a.txt"
+          }
+        },
+        {
+          "tool": "read_file",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/b.txt"
+          }
+        },
+        {
+          "tool": "read_file",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/missing.txt"
+          }
+        }
+      ]
+    },
+    "no_code_exec": {
+      "audit": [
+        {
+          "timestamp": "2026-09-29T15:52:44.176774+00:00",
+          "tool_name": "write_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/out.txt",
+            "content": "verified output"
+          },
+          "inferred_categories": [
+            "fs.write"
+          ],
+          "inference_reasons": {
+            "fs.write": [
+              "name:write_file",
+              "arg_path_write:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.write": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 0.728,
+          "policy_name": "no-code-exec"
+        },
+        {
+          "timestamp": "2026-09-29T15:52:44.185503+00:00",
+          "tool_name": "read_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/out.txt"
+          },
+          "inferred_categories": [
+            "fs.read"
+          ],
+          "inference_reasons": {
+            "fs.read": [
+              "name:read_file",
+              "arg_path_read:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.read": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 0.303,
+          "policy_name": "no-code-exec"
+        },
+        {
+          "timestamp": "2026-09-29T15:52:44.190586+00:00",
+          "tool_name": "write_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/link.txt",
+            "content": "modified"
+          },
+          "inferred_categories": [
+            "fs.write"
+          ],
+          "inference_reasons": {
+            "fs.write": [
+              "name:write_file",
+              "arg_path_write:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.write": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 0.374,
+          "policy_name": "no-code-exec"
+        }
+      ],
+      "upstream_receipts": [
+        {
+          "tool": "write_file",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/out.txt"
+          }
+        },
+        {
+          "tool": "read_file",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/out.txt"
+          }
+        },
+        {
+          "tool": "write_file",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/link.txt"
+          }
+        }
+      ]
+    },
+    "approval_gated": {
+      "audit": [
+        {
+          "timestamp": "2026-09-29T15:52:45.173322+00:00",
+          "tool_name": "write_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/ask.txt",
+            "content": "blocked"
+          },
+          "inferred_categories": [
+            "fs.write"
+          ],
+          "inference_reasons": {
+            "fs.write": [
+              "name:write_file",
+              "arg_path_write:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.write": "ask"
+          },
+          "final_decision": "deny",
+          "latency_ms": 0.787,
+          "policy_name": "approval-gated"
+        }
+      ],
+      "upstream_receipts": []
+    },
+    "crash": {
+      "audit": [
+        {
+          "timestamp": "2026-09-29T15:52:46.185442+00:00",
+          "tool_name": "read_text_file",
+          "server": "validation",
+          "arguments_summary": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/a.txt"
+          },
+          "inferred_categories": [
+            "fs.read"
+          ],
+          "inference_reasons": {
+            "fs.read": [
+              "name:read_text_file",
+              "arg_path_read:path"
+            ]
+          },
+          "high_risk": false,
+          "category_decisions": {
+            "fs.read": "allow"
+          },
+          "final_decision": "allow",
+          "latency_ms": 1.08,
+          "policy_name": "read-only"
+        }
+      ],
+      "upstream_receipts": [
+        {
+          "tool": "read_crash",
+          "arguments": {
+            "path": "/tmp/mcp-hardening-fy2bmva7/a.txt"
+          }
+        }
+      ]
+    }
+  },
+  "scope": "Controlled local stdio fixture; two benign executed workflows, denial/error/symlink/crash checks; no OS confinement or autonomous-agent benchmark.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "mcp": "1.14.1",
+    "anyio": "4.10.0"
+  }
+}

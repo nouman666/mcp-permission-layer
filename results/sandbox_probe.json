@@ -1,0 +1,7 @@
+{
+  "sandbox_backend": "bubblewrap",
+  "probe": "bwrap --ro-bind / / --dev /dev --proc /proc --unshare-net true",
+  "result": "rejected by managed kernel: Operation not permitted",
+  "fail_closed_launcher": "scripts/sandbox_launcher.py refuses an unconfined launch",
+  "note": "The probe is recorded as an environment result; no successful OS confinement number is claimed."
+}

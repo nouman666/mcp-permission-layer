@@ -1,0 +1,6967 @@
+{
+  "experiment": "independent-source generalization",
+  "sources": {
+    "AGT": {
+      "n": 251,
+      "category_match": 15,
+      "rate": 0.05976095617529881
+    },
+    "AgentBound": {
+      "n": 300,
+      "category_match": 32,
+      "rate": 0.10666666666666667
+    }
+  },
+  "n": 551,
+  "rows": [
+    {
+      "source": "AgentBound",
+      "tool": "Fetch",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "net.http"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Filesystem",
+      "expected_categories": [
+        "fs.read",
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Sequential Thinking",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Time",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Knowledge Graph Memory",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Demo (Everything)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Context7 (Documentation Database)",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Task Master",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "RepoMix",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Playwright Browser Automation",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Activepieces",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Mastra Docs",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Skyvern",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Blender",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Python Sandbox",
+      "expected_categories": [
+        "code.exec",
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Pipedream",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Figma Context",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "CUA MCP Server",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Serena",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Arize Phoenix",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AWS Documentation",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AWS Bedrock Knowledge Base Retrieval",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AWS Cloud Development Kit",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AWS Cost Analysis",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AWS Nova Canvas",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "JsonDiffPatch",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "n8n",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Playwright",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "FireCrawl",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Vizro",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Notion",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Cloudflare",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Lingo.dev (Translation)",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Atlassian Cloud",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Genkit",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tianji",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Sourcebot",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AntV Chart Generator",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Apple Native Tools",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "XcodeBuild",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Excel File Manipulation",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Supabase",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "PostgREST (Supabase)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Ableton Live",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Mobile Device Control",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "ArXiv",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Basic Memory",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Clerk",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Solana Agent Kit",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "OpenDia",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MCP Installer",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DBHub (Universal Database Gateway)",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Obsidian",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Bright Data",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Stripe Agent Toolkit",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "ElevenLabs",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "JetBrains IDE",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DeepWiki Markdown Converter",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MiniMax",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "iOS Simulator",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Qdrant",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Gemini CLI",
+      "expected_categories": [
+        "code.exec",
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Office PowerPoint",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Web Fetcher",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "OpenAPI Proxy",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MySQL",
+      "expected_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Claude Code",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Read MySQL",
+      "expected_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "kubectl",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tavily Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Deebo (Autonomous Debugging)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tencent CloudBase",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Cloudflare Workers",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "LLMS.txt Documentation",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Short Video Maker",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Hyperbrowser",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Context Portal",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Peekaboo (macOS Screen Capture)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Office Word",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MongoDB",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "IDA Pro",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Shopify Dev",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Documentation Scraper",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Excel",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "GitLab",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "macOS Automator",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "YouTube",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Workspace",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "iTerm",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Elasticsearch",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Docker",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DuckDuckGo Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "File Format Converter (Pandoc)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Graphlit",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "HuggingFace Spaces Connector",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Octocode",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "dbt",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Kubernetes",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Paelladoc",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AppleScript",
+      "expected_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Sheets",
+      "expected_categories": [
+        "fs.read",
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "ClickUp",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Baidu Maps",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Sequential Thinking Tools",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "TypeScript Refactoring",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "EVM Blockchain",
+      "expected_categories": [
+        "env.read",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Ref",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Todoist",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "ToolFront",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MotherDuck & DuckDB",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "YouTube Transcripts",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Interactive Terminal",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Web Research",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Node.js Debugger",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Base Blockchain",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Chroma",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "X (Twitter)",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DeepSeek",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Spec-Driven Development",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "LLM Code Context",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Airbnb",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Airtable",
+      "expected_categories": [
+        "fs.read",
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AIPo Labs",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "EdgeOne Pages",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "BioMCP (Biomedical Database Integration)",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Windows CLI",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Investor Agent (Financial Analysis)",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "FreeCAD",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "OpenAI o3 Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Everything Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Figma to Code",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Selenium",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Sequential Thinking Multi-Agent System",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "EpicShop Workshop",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Perplexity",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "NixOS",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Qdrant Docs Rag",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "ForeverVM",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Meta Ads API",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Neovim Integration",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "LangChain Integration",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Ultra (Multi-AI Provider)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Video Editor",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Microsoft 365",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Argo CD",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Figma",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Firebase",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "PDF Reader",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Code Runner",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Feishu/Lark",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Task Manager",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Voice MCP",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Markdown Mindmap",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Maigret OSINT",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Drive & Sheets",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tripo 3D",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Mux Video and Data Platform",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Lokka (Microsoft Graph)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Telegram",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Fetch (Web Content & YouTube Transcripts)",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "net.http"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Obsidian Vault",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Claude Talk to Figma",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Mermaid Diagram Generator",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Omnisearch",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Siri Shortcuts",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Mac Messages",
+      "expected_categories": [
+        "fs.read",
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Search1API",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "GistPad (GitHub Gists)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Phone Control (Android ADB)",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Ask Human",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Text Editor",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MasterGo Design",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DuckDB",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MetaMCP",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Pinecone Vector DB",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Hotnews (Chinese Social)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tree-sitter",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Cloud Platform",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Chinese Trends Hub",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "PayPal Agent Toolkit",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "CLI Secure",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "arXiv Research",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Magic UI",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "OpenDataMCP",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "GitHub",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Puppeteer",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Brave Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "PostgreSQL",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Git",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Maps",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Slack",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "SQLite",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Drive",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Sentry",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "EverArt",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Salesforce",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Shell Command",
+      "expected_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Make",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Analytics 4",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Anubis",
+      "expected_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Simple PubMed",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Feishu (Lark)",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Terraform Registry",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Anytype",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Solana Agent",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "RagRabbit",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "BigQuery",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Apple Notes",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Dynatrace",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Package Version Checker",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AgentRPC",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "OpenAPI",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Dart Project Management",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Xero",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "FFmpeg Media Tools",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Backlinks (Ahrefs)",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Calculator",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Svelte Docs",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Zotero",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Docfork",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "ImageSorcery",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Logfire",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "WordPress",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AgentQL",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Next.js API Scanner",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MySQL Database",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Frida",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "CCXT",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Asana",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Chronulus AI Forecasting",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Cryo",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Unified Tool Kit",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Confluent Cloud",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Markmap",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Datadog",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "SearXNG Search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Readwise",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Reddit",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Serper Search and Scrape",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "BrowserStack",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Vectorize",
+      "expected_categories": [
+        "env.read",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "env.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Minecraft",
+      "expected_categories": [
+        "env.read",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "3D Printer Manager",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Coincap",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Browser MCP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MCP DB Utils",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Package Docs",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "WordPress Remote",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Apache Airflow",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Maps (Travel Planner)",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "TouchDesigner",
+      "expected_categories": [
+        "code.exec",
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Kodit",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MiniMax Multimodal",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Stability AI",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Browser Use",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "VirusTotal",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Square",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Webcam/Screenshot Capture",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tmux MCP",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DebuggAI",
+      "expected_categories": [
+        "code.exec",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Codex Keeper",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Penpot",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Xcodebuild",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "GoHighLevel",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Azure DevOps",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Postman",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "A2A Bridge",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Auth0",
+      "expected_categories": [
+        "fs.read",
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Payload CMS",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "WordPress AI Integration",
+      "expected_categories": [
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "AiDD (Dev Workflows)",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "VS Code",
+      "expected_categories": [
+        "code.exec"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Tinybird",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Lara Translate",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "DigitalOcean",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "JSON Manipulation",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "FFmpeg Video Manipulation",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Shodan",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Taskade",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Cursor MCP Installer",
+      "expected_categories": [
+        "env.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Google Search (Gemini)",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Email Server",
+      "expected_categories": [
+        "fs.write"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Excel Data Manager",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "NASA APIs",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Alibaba Cloud",
+      "expected_categories": [
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Sanity CMS",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "LibSQL Memory",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "LLMs.txt Explorer",
+      "expected_categories": [
+        "env.read",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Nutrient Document Web Services",
+      "expected_categories": [
+        "code.exec",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Plane Project Management",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "REST API Tester",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "MCP Guide",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Contentful Management",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Octagon Investment Research",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Read Website Fast",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "LlamaIndex",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "1MCP Agent",
+      "expected_categories": [],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "Pulumi Infrastructure as Code",
+      "expected_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AgentBound",
+      "tool": "CircleCI",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "type",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "type",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "filesystem",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "object_storage",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "read_file",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "allow"
+    },
+    {
+      "source": "AGT",
+      "tool": "search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "list_files",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "allow"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "code_execute",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "api_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "compute",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "total",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "tool_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_query",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "code_execute",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_query",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "session",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "experiment_run",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "read_file",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "allow"
+    },
+    {
+      "source": "AGT",
+      "tool": "search",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "list_files",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "allow"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "shell_exec",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "deploy",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "config_change",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "user_data_access",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_operation",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "infrastructure_change",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "tool_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_query",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "financial_transaction",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_authorization",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "journal_entry",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "financial_transaction",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "data_deletion",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "data_deletion",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "data_export",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "data_export",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_process",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "refund_process",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_report",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_process",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_config",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_process",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "refund_process",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "session",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "payment_session",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "admin_session",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "tool_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_query",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "deny",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_delete",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "shell_exec",
+      "expected_categories": [
+        "code.exec",
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "http_request",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_query",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "cmvk_review",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_write",
+      "expected_categories": [
+        "fs.read",
+        "fs.write",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.write"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "deploy",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "user_data_access",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "api_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "category_match": true,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "tool_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "database_query",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "file_read",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "deny",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "allow",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "audit",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "name",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "name",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGKILL",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "llm_call",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "SIGSTOP",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "name",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    },
+    {
+      "source": "AGT",
+      "tool": "agent-sre",
+      "expected_categories": [
+        "fs.read",
+        "net.http"
+      ],
+      "inferred_categories": [
+        "code.exec",
+        "fs.read"
+      ],
+      "category_match": false,
+      "decision": "deny"
+    }
+  ],
+  "source_sha256": {
+    "/workspace/scratch/fa6e1993590e/research_inputs/downloads.json": "13898f5e70cd1a2e6db2c400c70a5a73cfba6d5c367d733196017064f38a5388"
+  },
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+  }
+}

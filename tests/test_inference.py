@@ -131,3 +131,91 @@ if __name__ == "__main__":
     test_helpers()
     test_reasons_present()
     print("\nAll tests passed.")
+
+# Reviewer 1 Comment 1 / Comment 3 boundary tests implemented.
+def test_nested_sensitive_path_is_elevated():
+    result = infer_categories("read_file", {"input": {"path": "~/.ssh/id_rsa"}})
+    assert "fs.read" in result.categories
+    assert "env.read" in result.categories
+    assert result.high_risk is True
+
+
+def test_list_sensitive_path_is_elevated():
+    result = infer_categories("read_multiple_files", {"paths": ["README.md", "/root/.ssh/config"]})
+    assert "fs.read" in result.categories
+    assert "env.read" in result.categories
+
+
+def test_windows_sensitive_path_is_elevated():
+    result = infer_categories("read_file", {"path": r"C:\\Users\\alice\\.ssh\\authorized_keys"})
+    assert "env.read" in result.categories
+
+
+def test_relative_noncanonical_sensitive_path_is_elevated():
+    result = infer_categories("read_file", {"path": "./safe/../.ssh/config"})
+    assert "env.read" in result.categories
+
+
+def test_unfamiliar_write_like_tool_infers_write():
+    result = infer_categories("persist_blob", {"content": "x", "path": "/etc/hosts"})
+    assert "fs.write" in result.categories
+    assert "fs.read" not in result.categories
+
+
+def test_unknown_ambiguous_path_fails_closed_even_with_partial_category():
+    result = infer_categories("sync_workspace", {"path": "docs/readme.md"})
+    assert "fs.read" in result.categories
+    assert "code.exec" in result.categories
+    assert result.high_risk is True
+
+
+def test_incidental_name_substring_does_not_match_cat():
+    result = infer_categories("concatenate_strings", {"left": "a", "right": "b"})
+    assert "fs.read" not in result.categories
+    assert "code.exec" in result.categories  # unknown-call fail closed
+
+
+# Review Part B is implemented (Reviewer 2 Comment 2):
+# A renamed write tool with only an ordinary path and no other risk indicator
+# must not be allowed merely because fs.read was inferred first. The revised
+# inference adds a conservative uncertainty surrogate for unresolved path intent.
+def test_reviewer2_renamed_write_ordinary_path_fails_closed():
+    result = infer_categories("archive_object", {"path": "workspace/output.txt"})
+    assert "fs.read" in result.categories
+    assert "code.exec" in result.categories
+    assert result.high_risk is True
+    assert "ambiguous_resource_intent_fail_closed" in result.reasons.get("code.exec", [])
+
+# Review Part C is implemented (Reviewer 3 Comments 1-3): direct mechanism
+# regression tests for externally documented MCP tool semantics.
+def test_reviewer3_official_git_read_tools_do_not_fall_back_to_code_exec():
+    from inference import infer_categories
+    for name in ("git_status", "git_diff_unstaged", "git_diff_staged", "git_diff", "git_log", "git_show", "git_branch"):
+        r = infer_categories(name, {"repo_path": "/workspace/repo"})
+        assert r.categories == {"fs.read"}
+
+
+def test_reviewer3_official_git_write_tools_are_fs_write():
+    from inference import infer_categories
+    cases = [
+        ("git_commit", {"repo_path": "/workspace/repo", "message": "fix"}),
+        ("git_add", {"repo_path": "/workspace/repo", "files": ["src/a.py"]}),
+        ("git_reset", {"repo_path": "/workspace/repo"}),
+        ("git_create_branch", {"repo_path": "/workspace/repo", "branch_name": "feature/x"}),
+        ("git_checkout", {"repo_path": "/workspace/repo", "branch_name": "main"}),
+    ]
+    for name, args in cases:
+        r = infer_categories(name, args)
+        assert r.categories == {"fs.write"}
+
+
+def test_reviewer3_url_is_not_double_classified_as_filesystem_path():
+    from inference import infer_categories
+    r = infer_categories("fetch", {"url": "https://example.com/docs/page"})
+    assert r.categories == {"net.http"}
+
+
+def test_reviewer3_printenv_legacy_name_maps_to_env_read():
+    from inference import infer_categories
+    r = infer_categories("printEnv", {})
+    assert r.categories == {"env.read"}

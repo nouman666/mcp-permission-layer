@@ -1,0 +1,46 @@
+{
+  "official_mechanism_audit": {
+    "n": 27,
+    "case_required_coverage": 1.0,
+    "exact_set_accuracy": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "required_labels": 27,
+    "missed_required_labels": 0,
+    "extra_inferred_labels": 0
+  },
+  "mcptox_external_provenance": {
+    "n": 16,
+    "case_required_coverage": 1.0,
+    "exact_set_accuracy": null,
+    "micro_precision": null,
+    "micro_recall": 1.0,
+    "micro_f1": null,
+    "required_labels": 23,
+    "missed_required_labels": 0,
+    "extra_inferred_labels": 3
+  },
+  "policy_faithfulness": {
+    "n": 27,
+    "matches": 27,
+    "agreement": 1.0
+  },
+  "declared_capability_oracle": {
+    "n": 108,
+    "matches": 108,
+    "agreement": 1.0
+  },
+  "routed_gate_accounting": {
+    "routed_calls": 12,
+    "audit_records": 12,
+    "accounted_fraction": 1.0,
+    "scope_note": "This verifies accounting only for calls presented to the configured proxy. Direct or alternative upstream routes bypass this enforcement boundary by construction and are not claimed to be intercepted."
+  },
+  "caveats": [
+    "The official reference-server audit is a review-driven mechanism audit and was used to correct documented tool semantics; it is not a blind hold-out.",
+    "The MCPTox set has external provenance but is not blinded: the authors had access to MCPTox during revision. Its labels specify minimum required capabilities, so additional conservative categories are not counted as false positives.",
+    "No claim of complete interception across unconfigured alternative call paths is made.",
+    "No full end-to-end LLM-agent task-completion benchmark is added; utility claims remain call-level and multi-step workflow allowance is reported separately."
+  ]
+}

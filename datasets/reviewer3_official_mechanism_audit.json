@@ -1,0 +1,344 @@
+[
+  {
+    "id": "official_fs_read_text_file",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "read_text_file",
+    "arguments": {
+      "path": "workspace/readme.txt"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_read_media_file",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "read_media_file",
+    "arguments": {
+      "path": "workspace/image.png"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_read_multiple_files",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "read_multiple_files",
+    "arguments": {
+      "paths": [
+        "workspace/a.txt",
+        "workspace/b.txt"
+      ]
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_list_directory",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "list_directory",
+    "arguments": {
+      "path": "workspace"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_list_directory_with_sizes",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "list_directory_with_sizes",
+    "arguments": {
+      "path": "workspace"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_directory_tree",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "directory_tree",
+    "arguments": {
+      "path": "workspace"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_search_files",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "search_files",
+    "arguments": {
+      "path": "workspace",
+      "pattern": "*.py"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_get_file_info",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "get_file_info",
+    "arguments": {
+      "path": "workspace/readme.txt"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_list_allowed_directories",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "list_allowed_directories",
+    "arguments": {},
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as read-only/pure read."
+  },
+  {
+    "id": "official_fs_create_directory",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "create_directory",
+    "arguments": {
+      "path": "workspace/newdir"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as write-capable/not read-only."
+  },
+  {
+    "id": "official_fs_write_file",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "write_file",
+    "arguments": {
+      "path": "workspace/out.txt",
+      "content": "x"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as write-capable/not read-only."
+  },
+  {
+    "id": "official_fs_edit_file",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "edit_file",
+    "arguments": {
+      "path": "workspace/out.txt",
+      "edits": [
+        {
+          "oldText": "a",
+          "newText": "b"
+        }
+      ]
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as write-capable/not read-only."
+  },
+  {
+    "id": "official_fs_move_file",
+    "source_family": "official-mcp-filesystem",
+    "tool_name": "move_file",
+    "arguments": {
+      "source": "workspace/a.txt",
+      "destination": "workspace/b.txt"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official filesystem server documentation marks this tool as write-capable/not read-only."
+  },
+  {
+    "id": "official_git_git_status",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_status",
+    "arguments": {
+      "repo_path": "workspace/repo"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_diff_unstaged",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_diff_unstaged",
+    "arguments": {
+      "repo_path": "workspace/repo"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_diff_staged",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_diff_staged",
+    "arguments": {
+      "repo_path": "workspace/repo"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_diff",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_diff",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "target": "main"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_log",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_log",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "max_count": 5
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_show",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_show",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "revision": "HEAD"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_branch",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_branch",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "branch_type": "local"
+    },
+    "expected_categories": [
+      "fs.read"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository inspection/read."
+  },
+  {
+    "id": "official_git_git_commit",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_commit",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "message": "test"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository state mutation."
+  },
+  {
+    "id": "official_git_git_add",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_add",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "files": [
+        "src/a.py"
+      ]
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository state mutation."
+  },
+  {
+    "id": "official_git_git_reset",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_reset",
+    "arguments": {
+      "repo_path": "workspace/repo"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository state mutation."
+  },
+  {
+    "id": "official_git_git_create_branch",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_create_branch",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "branch_name": "feature/test"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository state mutation."
+  },
+  {
+    "id": "official_git_git_checkout",
+    "source_family": "official-mcp-git",
+    "tool_name": "git_checkout",
+    "arguments": {
+      "repo_path": "workspace/repo",
+      "branch_name": "main"
+    },
+    "expected_categories": [
+      "fs.write"
+    ],
+    "label_basis": "Official git server documentation describes this operation as repository state mutation."
+  },
+  {
+    "id": "official_fetch_fetch",
+    "source_family": "official-mcp-fetch",
+    "tool_name": "fetch",
+    "arguments": {
+      "url": "https://docs.python.org/3/library/os.html"
+    },
+    "expected_categories": [
+      "net.http"
+    ],
+    "label_basis": "Official fetch server documentation states that fetch retrieves an Internet URL."
+  },
+  {
+    "id": "official_everything_get_env",
+    "source_family": "official-mcp-everything",
+    "tool_name": "get-env",
+    "arguments": {},
+    "expected_categories": [
+      "env.read"
+    ],
+    "label_basis": "Official Everything server documentation states that get-env returns process environment variables."
+  }
+]

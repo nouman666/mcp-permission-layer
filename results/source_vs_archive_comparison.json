@@ -1,0 +1,220 @@
+{
+  "original_source_matches_hardened": {
+    "splits": true,
+    "ablations": true,
+    "baselines": true,
+    "uncertainty": true
+  },
+  "archived_numeric_corrections": [
+    {
+      "metric": "splits/pilot_design/approval_gated/recall",
+      "archived": 96.72131147540983,
+      "rerun": 95.08196721311475
+    },
+    {
+      "metric": "splits/pilot_design/approval_gated/precision",
+      "archived": 90.76923076923077,
+      "rerun": 90.625
+    },
+    {
+      "metric": "splits/pilot_design/approval_gated/asr",
+      "archived": 3.278688524590164,
+      "rerun": 4.918032786885246
+    },
+    {
+      "metric": "splits/pilot_design/approval_gated/tp",
+      "archived": 59,
+      "rerun": 58
+    },
+    {
+      "metric": "splits/pilot_design/approval_gated/fn",
+      "archived": 2,
+      "rerun": 3
+    },
+    {
+      "metric": "splits/pilot_design/approval_gated/f1",
+      "archived": 93.65079365079364,
+      "rerun": 92.8
+    },
+    {
+      "metric": "splits/pilot_design/approval_gated/block_rate",
+      "archived": 96.72131147540983,
+      "rerun": 95.08196721311475
+    },
+    {
+      "metric": "splits/organic_holdout/approval_gated/recall",
+      "archived": 100.0,
+      "rerun": 98.0
+    },
+    {
+      "metric": "splits/organic_holdout/approval_gated/asr",
+      "archived": 0.0,
+      "rerun": 2.0
+    },
+    {
+      "metric": "splits/organic_holdout/approval_gated/tp",
+      "archived": 50,
+      "rerun": 49
+    },
+    {
+      "metric": "splits/organic_holdout/approval_gated/fn",
+      "archived": 0,
+      "rerun": 1
+    },
+    {
+      "metric": "splits/organic_holdout/approval_gated/f1",
+      "archived": 100.0,
+      "rerun": 98.98989898989899
+    },
+    {
+      "metric": "splits/organic_holdout/approval_gated/block_rate",
+      "archived": 100.0,
+      "rerun": 98.0
+    },
+    {
+      "metric": "splits/organic_holdout/no_code_exec/recall",
+      "archived": 100.0,
+      "rerun": 98.0
+    },
+    {
+      "metric": "splits/organic_holdout/no_code_exec/asr",
+      "archived": 0.0,
+      "rerun": 2.0
+    },
+    {
+      "metric": "splits/organic_holdout/no_code_exec/tp",
+      "archived": 50,
+      "rerun": 49
+    },
+    {
+      "metric": "splits/organic_holdout/no_code_exec/fn",
+      "archived": 0,
+      "rerun": 1
+    },
+    {
+      "metric": "splits/organic_holdout/no_code_exec/f1",
+      "archived": 100.0,
+      "rerun": 98.98989898989899
+    },
+    {
+      "metric": "splits/organic_holdout/no_code_exec/block_rate",
+      "archived": 100.0,
+      "rerun": 98.0
+    },
+    {
+      "metric": "ablations/pilot_design/no_name_heuristics/fp",
+      "archived": 26,
+      "rerun": 21
+    },
+    {
+      "metric": "ablations/pilot_design/no_name_heuristics/precision",
+      "archived": 70.11494252873564,
+      "rerun": 74.39024390243902
+    },
+    {
+      "metric": "ablations/pilot_design/no_name_heuristics/bcar",
+      "archived": 0.0,
+      "rerun": 19.230769230769234
+    },
+    {
+      "metric": "ablations/pilot_design/no_name_heuristics/tn",
+      "archived": 0,
+      "rerun": 5
+    },
+    {
+      "metric": "ablations/pilot_design/no_name_heuristics/f1",
+      "archived": 82.43243243243244,
+      "rerun": 85.3146853146853
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/recall",
+      "archived": 96.72131147540983,
+      "rerun": 95.08196721311475
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/precision",
+      "archived": 90.76923076923077,
+      "rerun": 90.625
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/asr",
+      "archived": 3.278688524590164,
+      "rerun": 4.918032786885246
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/tp",
+      "archived": 59,
+      "rerun": 58
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/fn",
+      "archived": 2,
+      "rerun": 3
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/f1",
+      "archived": 93.65079365079364,
+      "rerun": 92.8
+    },
+    {
+      "metric": "ablations/pilot_design/no_domain_allowlist/block_rate",
+      "archived": 96.72131147540983,
+      "rerun": 95.08196721311475
+    },
+    {
+      "metric": "ablations/organic_holdout/no_name_heuristics/fp",
+      "archived": 40,
+      "rerun": 30
+    },
+    {
+      "metric": "ablations/organic_holdout/no_name_heuristics/precision",
+      "archived": 55.55555555555556,
+      "rerun": 62.5
+    },
+    {
+      "metric": "ablations/organic_holdout/no_name_heuristics/bcar",
+      "archived": 0.0,
+      "rerun": 25.0
+    },
+    {
+      "metric": "ablations/organic_holdout/no_name_heuristics/tn",
+      "archived": 0,
+      "rerun": 10
+    },
+    {
+      "metric": "ablations/organic_holdout/no_name_heuristics/f1",
+      "archived": 71.42857142857143,
+      "rerun": 76.92307692307693
+    },
+    {
+      "metric": "ablations/organic_holdout/no_domain_allowlist/recall",
+      "archived": 100.0,
+      "rerun": 98.0
+    },
+    {
+      "metric": "ablations/organic_holdout/no_domain_allowlist/asr",
+      "archived": 0.0,
+      "rerun": 2.0
+    },
+    {
+      "metric": "ablations/organic_holdout/no_domain_allowlist/tp",
+      "archived": 50,
+      "rerun": 49
+    },
+    {
+      "metric": "ablations/organic_holdout/no_domain_allowlist/fn",
+      "archived": 0,
+      "rerun": 1
+    },
+    {
+      "metric": "ablations/organic_holdout/no_domain_allowlist/f1",
+      "archived": 100.0,
+      "rerun": 98.98989898989899
+    },
+    {
+      "metric": "ablations/organic_holdout/no_domain_allowlist/block_rate",
+      "archived": 100.0,
+      "rerun": 98.0
+    }
+  ]
+}

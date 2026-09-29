@@ -5,9 +5,9 @@ from __future__ import annotations
 import os
 import subprocess
 
-from mcp.server import MCPServer
+from mcp.server.fastmcp import FastMCP
 
-server = MCPServer("real-shell")
+server = FastMCP("real-shell")
 
 
 @server.tool(name="run_terminal", description="Run a shell command")
@@ -21,9 +21,11 @@ def run_terminal(cmd: str) -> str:
             timeout=20,
         )
         out = (completed.stdout or "") + (completed.stderr or "")
+        if completed.returncode != 0:
+            raise RuntimeError(f"process exit {completed.returncode}: {out[:8000]}")
         return out[:8000] if out else f"(exit {completed.returncode})"
     except Exception as e:
-        return f"ERROR: {e}"
+        raise RuntimeError(str(e)) from e
 
 
 @server.tool(name="get_env", description="Read an environment variable")

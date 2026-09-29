@@ -1,0 +1,32 @@
+[
+  {
+    "name": "agt.zip",
+    "url": "https://api.github.com/repos/microsoft/agent-governance-toolkit/zipball/main",
+    "bytes": 23442690,
+    "sha256": "fd114347c45abd0a5ab5c94001439640d68cd6db3ee37c6d8101eb772d5ecd4c"
+  },
+  {
+    "name": "agentdojo.zip",
+    "url": "https://api.github.com/repos/ethz-spylab/agentdojo/zipball/main",
+    "bytes": 106596427,
+    "sha256": "81243d91adc4cc45585e58a993e87795edb37f1f46d1f8eeaf145b2c38e24276"
+  },
+  {
+    "name": "agentbound.zip",
+    "url": "https://zenodo.org/records/19468201/files/source-repository.zip?download=1",
+    "bytes": 2495102,
+    "sha256": "6612760142825e180b5c4bab9469316aa03542c2199f4e3eebf1f65ea2026c31"
+  },
+  {
+    "name": "filesystem.json",
+    "url": "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/latest",
+    "bytes": 2778,
+    "sha256": "c781e0641471a82f98920f1367acbe91c9c9b688fab67943ca5410559a84b24e"
+  },
+  {
+    "name": "agt_pypi.json",
+    "url": "https://pypi.org/pypi/agent-governance-toolkit/json",
+    "bytes": 43687,
+    "sha256": "93aefe2c5db7a5507106414b9bd76fdd1534152ac871a8c1e03499f7ea9cf9fc"
+  }
+]
