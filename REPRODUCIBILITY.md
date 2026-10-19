@@ -6,7 +6,7 @@ See HARDENING.md for exact commands, current result paths, launch assumptions an
 
 ## Frozen software environment
 
-- Python dependencies: install exactly from `requirements-lock.txt` (`PyYAML==6.0.2`, `pytest==8.4.1`, `mcp==1.14.1`, `anyio==4.10.0`).
+- Python dependencies: install the complete validated environment from `results/final_environment_freeze.txt`; `requirements-lock.txt` contains only the four direct dependency pins (`PyYAML==6.0.2`, `pytest==8.4.1`, `mcp==1.14.1`, `anyio==4.10.0`).
 - Revised live-rerun config pins the official filesystem MCP server as `@modelcontextprotocol/server-filesystem@2026.8.31`. The fetch, git, shell/environment, and process test servers are local Python files in `servers/` and are therefore versioned by this release.
 - The originally submitted/archived Table 8 live run invoked the npm filesystem package without an explicit version. That exact npm version was not captured at run time and cannot be reconstructed honestly; Table 8 is therefore marked archival in the manuscript. Any new live rerun must use the pinned version above.
 
@@ -16,7 +16,8 @@ See HARDENING.md for exact commands, current result paths, launch assumptions an
 python -m venv .venv
 # Linux/macOS: source .venv/bin/activate
 # Windows: .venv\Scripts\activate
-pip install -r requirements-lock.txt
+python -m pip install -r results/final_environment_freeze.txt
+python -m pip check
 python scripts/generate_stress_dataset.py
 python scripts/build_reviewer_boundary_sets.py
 python -m pytest -q

@@ -1,5 +1,5 @@
 {
-  "artifact_revision": "hardening-2026-09-29",
+  "artifact_revision": "v1.2-r2",
   "splits": {
     "pilot_design": {
       "read_only": {
@@ -740,7 +740,10 @@
       "observed_asr_pct": 0.0,
       "n_malicious": 48,
       "successful_malicious_calls": 0,
-      "one_sided_95pct_upper_asr_pct": 6.050340934889431
+      "distinct_malicious_inputs": 16,
+      "distinct_benign_inputs": 8,
+      "benign_executions": 24,
+      "interpretation": "Finite deterministic suite only; duplicate executions do not add independent evidence. No population confidence bound."
     },
     "real_mcp_style": {
       "observed_asr_pct": 0.0,
@@ -751,20 +754,20 @@
   },
   "latency": {
     "checker_only_no_logging": {
-      "mean_ms": 0.26232176322333417,
-      "median_ms": 0.2065090002361103,
-      "p95_ms": 0.5049061000136132,
-      "p99_ms": 0.8223399400685577,
+      "mean_ms": 0.29821525057435605,
+      "median_ms": 0.24813599998196878,
+      "p95_ms": 0.5615741999918098,
+      "p99_ms": 0.805199840008299,
       "n": 435,
       "repetitions": 5,
       "operations_per_repetition": 87,
       "timed_operation": "PermissionChecker.evaluate only; excludes audit logging, proxy framing, transport, and upstream execution"
     },
     "local_proxy_including_sync_logging": {
-      "mean_ms": 0.2522380919621899,
-      "median_ms": 0.2319269997315132,
-      "p95_ms": 0.4237230000398995,
-      "p99_ms": 0.4947918001562355,
+      "mean_ms": 0.3623507203048481,
+      "median_ms": 0.30632900001137386,
+      "p95_ms": 0.6542560000184494,
+      "p99_ms": 1.0336421999909358,
       "n": 261,
       "repetitions": 3,
       "operations_per_repetition": 87,
@@ -773,8 +776,8 @@
     "live_end_to_end": "reported separately by scripts/run_live_mcp_eval.py; includes transport/proxy/upstream"
   },
   "freeze": {
-    "src/inference.py": "17c96cf73e90db44c74c6c2deff09281915d5bf314fc73572acbf45068dcb291",
-    "src/checker.py": "3306680893b2b8f0a54bb8b157d27c961710dc1302795740c0b099ecc6e66673",
+    "src/inference.py": "2841dc9fbb27eca04de1b05fa182e16d27dfd18ee83fe89c62dd603588cd83ea",
+    "src/checker.py": "ccf6e85271e5573605e00794d793c7eb3966d424a6bbdbc6c1cbf53c9c5c6978",
     "scripts/metrics.py": "0fd0570ded2615db57936ad3102a2844ca8460da05241ff22723ccabf0d4c8eb",
     "policies/limited_network.yaml": "17f0163e64273dbace45464c6fb0358a699d6a3e94139833ea35752d3e61e914",
     "note": "Boundary/external-schema evaluations were run against these fixed file hashes; no heuristic edits occurred between split runs."

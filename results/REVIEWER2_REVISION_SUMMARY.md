@@ -26,7 +26,7 @@ Limited-network: ASR 0.00% (0/12 allowed attacks), BCAR 100.00% (13/13 benign ca
 ## Uncertainty
 - pilot_stratified_bootstrap: `{"asr": {"point": 1.639344262295082, "mean": 1.7426229508196722, "std": 1.7143322906072724, "ci95_low": 0.0, "ci95_high": 4.918032786885246, "n_boot": 2000, "method": "class-stratified percentile bootstrap"}, "bcar": {"point": 76.92307692307693, "mean": 76.91730769230769, "std": 8.208430449081485, "ci95_low": 61.53846153846154, "ci95_high": 92.3076923076923, "n_boot": 2000, "method": "class-stratified percentile bootstrap"}, "f1": {"point": 94.48818897637796, "mean": 94.45405616128416, "std": 1.7970457541516902, "ci95_low": 90.76923076923077, "ci95_high": 97.6, "n_boot": 2000, "method": "class-stratified percentile bootstrap"}}`
 - organic_holdout: `{"observed_asr_pct": 0.0, "n_malicious": 50, "successful_malicious_calls": 0, "one_sided_95pct_upper_asr_pct": 5.815507911697226}`
-- adaptive_boundaries_v2: `{"observed_asr_pct": 0.0, "n_malicious": 48, "successful_malicious_calls": 0, "one_sided_95pct_upper_asr_pct": 6.050340934889431}`
+- adaptive_boundaries_v2: `{"observed_asr_pct": 0.0, "n_malicious": 48, "successful_malicious_calls": 0, "distinct_malicious_inputs": 16, "distinct_benign_inputs": 8, "benign_executions": 24, "interpretation": "Finite deterministic suite only; duplicate executions do not add independent evidence. No population confidence bound."}`
 - real_mcp_style: `{"observed_asr_pct": 0.0, "n_malicious": 12, "successful_malicious_calls": 0, "one_sided_95pct_upper_asr_pct": 22.092219194555586}`
 
 ## Reviewer-2 renamed-write regression
@@ -36,5 +36,5 @@ Targeted case: decision security metrics ASR 0.00% (0% means the renamed write w
 Benign calls allowed by limited-network but denied by read-only: ['RM-004', 'RM-005', 'RM-009']
 
 ## Latency boundaries
-- Checker only, no logging: {'mean_ms': 0.26232176322333417, 'median_ms': 0.2065090002361103, 'p95_ms': 0.5049061000136132, 'p99_ms': 0.8223399400685577, 'n': 435, 'repetitions': 5, 'operations_per_repetition': 87, 'timed_operation': 'PermissionChecker.evaluate only; excludes audit logging, proxy framing, transport, and upstream execution'}
-- Local proxy including synchronous logging: {'mean_ms': 0.2522380919621899, 'median_ms': 0.2319269997315132, 'p95_ms': 0.4237230000398995, 'p99_ms': 0.4947918001562355, 'n': 261, 'repetitions': 3, 'operations_per_repetition': 87, 'timed_operation': 'EnforcementProxy.handle_tool_call including synchronous JSONL logging; excludes MCP stdio transport and upstream execution'}
+- Checker only, no logging: {'mean_ms': 0.29821525057435605, 'median_ms': 0.24813599998196878, 'p95_ms': 0.5615741999918098, 'p99_ms': 0.805199840008299, 'n': 435, 'repetitions': 5, 'operations_per_repetition': 87, 'timed_operation': 'PermissionChecker.evaluate only; excludes audit logging, proxy framing, transport, and upstream execution'}
+- Local proxy including synchronous logging: {'mean_ms': 0.3623507203048481, 'median_ms': 0.30632900001137386, 'p95_ms': 0.6542560000184494, 'p99_ms': 1.0336421999909358, 'n': 261, 'repetitions': 3, 'operations_per_repetition': 87, 'timed_operation': 'EnforcementProxy.handle_tool_call including synchronous JSONL logging; excludes MCP stdio transport and upstream execution'}

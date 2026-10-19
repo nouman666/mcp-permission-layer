@@ -96,6 +96,9 @@ def external_cases():
 
 
 def main():
+    provenance_path = DATA / "PROVENANCE.md"
+    prior = provenance_path.read_text(encoding="utf-8") if provenance_path.exists() else ""
+    suffix = "\n## Reviewer-3" + prior.split("\n## Reviewer-3", 1)[1] if "\n## Reviewer-3" in prior else ""
     (DATA/"adaptive_boundaries_v2.json").write_text(json.dumps(boundary_cases(),indent=2),encoding="utf-8")
     (DATA/"external_schema_cases.json").write_text(json.dumps(external_cases(),indent=2),encoding="utf-8")
     (DATA/"reviewer2_targeted_cases.json").write_text(json.dumps(reviewer2_targeted_cases(),indent=2),encoding="utf-8")
@@ -106,7 +109,7 @@ def main():
         "- Labels were assigned at case construction from the intended scenario: `beneficial=false` for calls intentionally representing credential access/exfiltration/execution/destructive or otherwise attacker-directed behaviour, and `beneficial=true` for ordinary project reads, directory listings, and allow-listed documentation/API fetches. The labels are scenario labels, not outputs of the defence.\n"
         "- The file was kept separate from `datasets/holdout/pilot_87.json` and was not used to choose the six-category taxonomy, NAME_RULES, sensitive-path patterns, domain allow-list, or policy matrices. It is author-created and author-labelled; it is not blinded or independently labelled.\n\n"
         "## White-box boundary/adaptive suite\n"
-        "- `adaptive_boundaries_v2.json` contains 16 malicious boundary families repeated three times (48 malicious cases) and 8 benign boundary families repeated three times (24 benign cases). It was created only after the corrected inference/checker logic was frozen.\n"
+        "- `adaptive_boundaries_v2.json` contains 16 distinct malicious tool-name/argument combinations and 8 distinct benign combinations, each repeated identically three times (48 malicious and 24 benign executions per profile). Repetitions add no independent observations for this deterministic mechanism; no population confidence bound is assigned. The suite predates the follow-up resource-resolution fixes and is rerun as regression coverage.\n"
         "- The case author had white-box knowledge of the published inference rules and Reviewer-1 boundary findings. There was no iterative attack loop: each fixed case was evaluated once per policy profile in the reported run, with no per-case retries, hill-climbing, model feedback, or decision feedback used to rewrite a case after execution.\n"
         "- This is therefore best interpreted as a white-box boundary suite, not as a statistically powered adaptive-agent benchmark.\n\n"
         "## Targeted Reviewer-2 regression\n"
@@ -115,6 +118,8 @@ def main():
         "- `external_schema_cases.json`: case shapes derived from the official Model Context Protocol filesystem server schemas at https://github.com/modelcontextprotocol/servers/blob/main/src/filesystem/index.ts (inspected 2026-09-22).\n"
         "- `large_dataset.jsonl`: deterministically reconstructed by `scripts/generate_stress_dataset.py`; no random seed is required.\n",
         encoding="utf-8")
+    if suffix:
+        provenance_path.write_text(provenance_path.read_text(encoding="utf-8") + suffix, encoding="utf-8")
     print("Wrote boundary and external-schema sets")
 
 if __name__ == "__main__": main()

@@ -6,7 +6,7 @@
 - The file was kept separate from `datasets/holdout/pilot_87.json` and was not used to choose the six-category taxonomy, NAME_RULES, sensitive-path patterns, domain allow-list, or policy matrices. It is author-created and author-labelled; it is not blinded or independently labelled.
 
 ## White-box boundary/adaptive suite
-- `adaptive_boundaries_v2.json` contains 16 malicious boundary families repeated three times (48 malicious cases) and 8 benign boundary families repeated three times (24 benign cases). It was created only after the corrected inference/checker logic was frozen.
+- `adaptive_boundaries_v2.json` contains 16 distinct malicious tool-name/argument combinations and 8 distinct benign combinations, each repeated identically three times (48 malicious and 24 benign executions per profile). Repetitions add no independent observations for this deterministic mechanism; no population confidence bound is assigned. The suite predates the follow-up resource-resolution fixes and is rerun as regression coverage.
 - The case author had white-box knowledge of the published inference rules and Reviewer-1 boundary findings. There was no iterative attack loop: each fixed case was evaluated once per policy profile in the reported run, with no per-case retries, hill-climbing, model feedback, or decision feedback used to rewrite a case after execution.
 - This is therefore best interpreted as a white-box boundary suite, not as a statistically powered adaptive-agent benchmark.
 

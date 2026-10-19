@@ -3,7 +3,10 @@
 ## Reproduce (Linux / Python 3.12)
 
 ```sh
-python -m pip install -r requirements-lock.txt
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r results/final_environment_freeze.txt
+python -m pip check
 python -m pytest -q
 python scripts/run_revision_evaluation.py
 python scripts/run_reviewer3_validation.py
@@ -11,7 +14,7 @@ python scripts/run_reviewer3_comment2_validation.py
 python scripts/run_hardening_validation.py
 ```
 
-Observed: 79 tests pass. `results/hardening_validation.json` records 12 actual
+Current follow-up verification: 109 tests pass (80 existing and 29 resource-resolution regressions). `results/hardening_validation.json` records 12 actual
 stdio assertions, audit entries and independent upstream receipts. Two benign
 workflows verify actual read/read and write/read outcomes. This is a controlled
 local fixture, not an autonomous-agent benchmark or a generalization estimate.
@@ -55,7 +58,7 @@ network privileges can use another route. Hashes do not defeat an adversary
 who can modify the manifest/interpreter or race administrator-owned files.
 
 The live checker resolves filesystem paths relative to the proxy/upstream
-working directory. The offline lexical inference/replay remains unchanged.
+working directory. The follow-up revision corrects resource-specific ambiguity and retains each network destination's resolution status.
 Custom sensitive_paths are enforced. Resolution catches existing symlink
 aliases but is not a race-free protection for arbitrary third-party servers.
 The supplied POSIX reference file helpers additionally traverse by directory
@@ -94,8 +97,9 @@ excluded from authorization-rate denominators and reported with coverage.
 Protocol success is not claimed as semantic task completion. Metadata is trusted
 only on the verified proxy route. Two additional regression tests cover upstream
 marker replacement and unverified/inconsistent responses. Current verification:
-`results/final_pytest.txt` (79 passed), `results/hardening_validation.json`
+`results/final_pytest.txt` (109 passed), `results/hardening_validation.json`
 (12 passed assertions), `results/final_environment_freeze.txt` (installed pins).
-The prior measured performance run is retained; final changes affect live
-outcome classification, not offline inference or authorization replay.
+The follow-up resource-resolution revision reruns capability audits, security/utility replay, comparator/workflow checks, and the controlled live fixture. ASR/BCAR/F1 remain unchanged on the existing suites; fresh timing is recorded separately in the replay output.
 
+
+The official installation uses the complete validated environment in `results/final_environment_freeze.txt` (including Pydantic 2.13.5). `requirements-lock.txt` pins only four direct dependencies and is not a complete environment lock.

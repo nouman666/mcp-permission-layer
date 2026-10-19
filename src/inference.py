@@ -215,7 +215,7 @@ def canonicalize_domain(value: Any, key_hint: str | None = None) -> str | None:
     key = _norm_key(key_hint)
     host: str | None = None
     try:
-        if re.match(r"^[a-z][a-z0-9+.-]*://", raw, flags=re.IGNORECASE):
+        if raw.startswith("//") or re.match(r"^[a-z][a-z0-9+.-]*://", raw, flags=re.IGNORECASE):
             host = urlparse(raw).hostname
         elif key in HOST_KEY_HINTS or key.endswith("_host") or key.endswith("_domain"):
             # // form lets urlparse handle ports and IPv6 literals.
@@ -224,7 +224,7 @@ def canonicalize_domain(value: Any, key_hint: str | None = None) -> str | None:
             host = urlparse("//" + raw).hostname
     except Exception:
         host = None
-    if not host:
+    if not host or re.search(r"[\s/\\]", host):
         return None
     host = host.strip().rstrip(".").lower()
     try:
@@ -232,6 +232,36 @@ def canonicalize_domain(value: Any, key_hint: str | None = None) -> str | None:
     except Exception:
         pass
     return host or None
+
+
+def is_network_resource(value: Any, key_hint: str | None = None) -> bool:
+    """Retain relevant destination leaves even when their value cannot resolve."""
+    key = _norm_key(key_hint)
+    return (key in URL_KEY_HINTS or key in HOST_KEY_HINTS
+            or key.endswith("_host") or key.endswith("_domain")
+            or looks_like_url(value, key_hint)
+            or canonicalize_domain(value, key_hint) is not None)
+
+
+def is_network_route(tool_name: str, arguments: Any, path_parts: tuple[str, ...],
+                     key_hint: str | None, value: Any) -> bool:
+    """Recognize an HTTP route only with a destination in the same request object.
+
+    Generic network names and download destinations do not establish route intent.
+    """
+    if not any(tool_name_matches(tool_name, n) for n in
+               ("http_request", "api_call", "send_request", "post_request")):
+        return False
+    if _norm_key(key_hint) not in {"path", "route", "request_path"}:
+        return False
+    if not isinstance(value, str) or not value.startswith("/") or value.startswith("//"):
+        return False
+    parent = arguments
+    for part in path_parts[:-1]:
+        parent = parent[int(part[1:-1])] if isinstance(parent, (list, tuple)) else parent[part]
+    return isinstance(parent, dict) and any(
+        k != key_hint and is_network_resource(v, str(k)) for k, v in parent.items()
+    )
 
 
 def looks_like_shell_command(value: Any) -> bool:
@@ -344,7 +374,7 @@ def infer_categories(
                     break
 
     # ----- Layer 2: recursive argument inspection -----
-    write_by_name = is_write_operation(tool_name)
+    write_by_name = is_write_operation(tool_name) or tool_name_matches(tool_name, "download")
     write_payload = _arguments_have_write_payload(arguments)
     saw_path = False
     saw_ambiguous_path = False
@@ -355,13 +385,14 @@ def infer_categories(
             loc = ".".join(path_parts) if path_parts else (key or "arg")
 
             domain = canonicalize_domain(value, key)
-            is_network_value = looks_like_url(value, key) or domain is not None
+            is_network_value = is_network_resource(value, key)
+            is_route = is_network_route(tool_name, arguments, path_parts, key, value)
 
             # Reviewer 3 mechanism audit: a URL such as https://example.com/path
             # is a network destination, not a filesystem path merely because it
             # contains slash characters. Network-valued schema fields therefore
             # take precedence over generic path-shape heuristics.
-            if looks_like_path(value, key) and not is_network_value:
+            if looks_like_path(value, key) and not is_network_value and not is_route:
                 saw_path = True
                 role = _path_role(key)
                 write_context = write_by_name or ("fs.write" in name_categories) or write_payload or role == "write"
@@ -398,7 +429,7 @@ def infer_categories(
     # If a resource-bearing path is present but the operation is not reliably
     # distinguishable as read vs write, add the existing high-risk surrogate.
     # This closes the earlier gap where a partial category prevented fallback.
-    if cfg.use_default_deny_unknown and saw_ambiguous_path and not matched_name:
+    if cfg.use_default_deny_unknown and saw_ambiguous_path:
         result.add("code.exec", "ambiguous_resource_intent_fail_closed")
         result.high_risk = True
 

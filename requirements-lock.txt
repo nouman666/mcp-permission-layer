@@ -1,3 +1,5 @@
+# Four direct dependency pins only; not a complete environment lock.
+# Official reproduction: pip install -r results/final_environment_freeze.txt
 PyYAML==6.0.2
 pytest==8.4.1
 mcp==1.14.1

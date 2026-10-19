@@ -35,6 +35,7 @@ from inference import (
     looks_like_path,
     canonicalize_path,
     canonicalize_domain,
+    is_network_resource,
 )
 
 
@@ -158,7 +159,10 @@ class PermissionChecker:
 
     def _violates_domain_restrictions(self, tool_call: ToolCall, rule: CategoryRule) -> bool:
         has_restrictions = bool(rule.allow_domains or rule.deny_domains)
-        domains = self._extract_domains(tool_call.arguments)
+        resources = self._extract_domain_resources(tool_call.arguments)
+        if has_restrictions and self.use_domain_allow_list and any(d is None for _, d in resources):
+            return True
+        domains = [d for _, d in resources if d is not None]
         if not domains:
             # Reviewer 1: restricted network access with no resolvable destination
             # must fail closed instead of silently bypassing the allow-list.
@@ -198,15 +202,14 @@ class PermissionChecker:
                     paths.append(p)
         return paths
 
+    def _extract_domain_resources(self, arguments: dict[str, Any]) -> list[tuple[tuple[str, ...], str | None]]:
+        # Preserve location and resolution status for every relevant leaf.
+        return [(path, canonicalize_domain(value, key))
+                for path, key, value in iter_argument_scalars(arguments)
+                if is_network_resource(value, key)]
+
     def _extract_domains(self, arguments: dict[str, Any]) -> list[str]:
-        domains: list[str] = []
-        seen: set[str] = set()
-        for _, key, value in iter_argument_scalars(arguments):
-            domain = canonicalize_domain(value, key)
-            if domain and domain not in seen:
-                seen.add(domain)
-                domains.append(domain)
-        return domains
+        return list(dict.fromkeys(d for _, d in self._extract_domain_resources(arguments) if d is not None))
 
     def _path_matches(self, path: str, pattern: str) -> bool:
         p = canonicalize_path(path).lower()

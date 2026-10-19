@@ -1041,11 +1041,12 @@
       ],
       "covered": true,
       "exact": false,
-      "high_risk": false,
+      "high_risk": true,
       "reasons": {
         "code.exec": [
           "name:execute_command",
-          "arg_shell:command"
+          "arg_shell:command",
+          "ambiguous_resource_intent_fail_closed"
         ],
         "fs.read": [
           "arg_path_read:command"
@@ -1069,10 +1070,11 @@
       ],
       "covered": true,
       "exact": false,
-      "high_risk": false,
+      "high_risk": true,
       "reasons": {
         "code.exec": [
-          "name:execute_command"
+          "name:execute_command",
+          "ambiguous_resource_intent_fail_closed"
         ],
         "fs.read": [
           "arg_path_read:command"
