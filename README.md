@@ -1,5 +1,7 @@
 # MCP Permission Layer — Revised Reproducibility Artifact
 
+The complete pinned Table 8 live rerun (100 known authorization outcomes) is available in [results/table8_pinned_rerun](results/table8_pinned_rerun/README.md), with exact installation commands, receipts, audit logs and execution-error disclosures. It supersedes the historical Table 8 measurements.
+
 The repository root contains the revised source code, datasets, evaluation scripts, pinned direct dependencies and supporting results. Clone this repository and run the commands below from its root.
 
 ```sh

@@ -78,8 +78,9 @@ aliases globally, or support equivalent Windows execution guarantees.
 - The declared-capability comparator is now independently implemented without
   checker/inference helper calls. It remains an in-process lexical comparator,
   not a deployed server-side ACL, AGT, or AgentBound reproduction.
-- Historical Table 8 transport values and ASK timings are explicitly archived;
-  the new stdio fixture does not rerun the original npm/network experiment.
+- Original Table 8 transport values and ASK timings remain archived. Current
+  Table 8 uses the separate complete pinned live rerun documented in
+  results/table8_pinned_rerun/README.md; the 12-assertion fixture is unchanged.
 - Wider task utility, adversarial concurrent path replacement, proxy-process
   crash recovery and OS confinement remain unevaluated.
 

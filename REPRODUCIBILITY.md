@@ -8,7 +8,7 @@ See HARDENING.md for exact commands, current result paths, launch assumptions an
 
 - Python dependencies: install the complete validated environment from `results/final_environment_freeze.txt`; `requirements-lock.txt` contains only the four direct dependency pins (`PyYAML==6.0.2`, `pytest==8.4.1`, `mcp==1.14.1`, `anyio==4.10.0`).
 - Revised live-rerun config pins the official filesystem MCP server as `@modelcontextprotocol/server-filesystem@2026.8.31`. The fetch, git, shell/environment, and process test servers are local Python files in `servers/` and are therefore versioned by this release.
-- The originally submitted/archived Table 8 live run invoked the npm filesystem package without an explicit version. That exact npm version was not captured at run time and cannot be reconstructed honestly; Table 8 is therefore marked archival in the manuscript. Any new live rerun must use the pinned version above.
+- The originally submitted/archived Table 8 live run invoked the npm filesystem package without an explicit version. That exact npm version was not captured at run time and cannot be reconstructed honestly; the original values remain archival. Table 8 now reports the complete pinned rerun documented in results/table8_pinned_rerun/README.md.
 
 ## Exact reproduction commands
 
@@ -26,7 +26,8 @@ python scripts/run_ask_study.py
 python scripts/run_reviewer3_validation.py
 python scripts/run_reviewer3_comment2_validation.py
 # Requires Node/npm and network/package availability:
-python scripts/run_live_mcp_eval.py
+npm ci --prefix configs/table8_npm --ignore-scripts --no-audit --no-fund
+python scripts/run_table8_pinned.py --output results/table8_new_run
 ```
 
 `run_revision_evaluation.py` writes raw per-case decisions under `results/raw/` and records the exact host allocation, repetition counts, operations per repetition, and timing boundaries used for latency.
