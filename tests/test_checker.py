@@ -142,10 +142,10 @@ def test_split_untrusted_host_denied_under_limited_network():
     assert decision == Decision.DENY
 
 
-def test_split_allowlisted_host_allowed_under_limited_network():
+def test_split_allowlisted_host_with_explicit_route_allowed_under_limited_network():
     policy = load_policy("limited_network.yaml")
     checker = PermissionChecker()
-    call = ToolCall(name="http_request", arguments={"host": "api.github.com", "path": "/zen"})
+    call = ToolCall(name="http_request", arguments={"host": "api.github.com", "request_path": "/zen"})
     decision, _ = checker.evaluate(call, policy)
     assert decision == Decision.ALLOW
 

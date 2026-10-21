@@ -1,5 +1,7 @@
 # Hardening revision — 2026-09-29
 
+The latest [HTTP path correction](HTTP_PATH_REVISION.md) removes generic-path route inference, passes 128 tests, and updates stress/boundary authorization results.
+
 ## Reproduce (Linux / Python 3.12)
 
 ```sh

@@ -1,5 +1,7 @@
 # Follow-up resource-resolution revision — 2026-10-16
 
+The latest [HTTP path correction](HTTP_PATH_REVISION.md) removes generic-path route inference, passes 128 tests, and updates stress/boundary authorization results.
+
 The complete pinned Table 8 live rerun (100 known authorization outcomes) is available in [results/table8_pinned_rerun](results/table8_pinned_rerun/README.md), with exact installation commands, receipts, audit logs and execution-error disclosures. It supersedes the historical Table 8 measurements.
 
 The source on this revision branch includes fixes for per-resource filesystem uncertainty and mixed resolved/unresolved network destinations. The full validated dependency freeze was installed in a fresh Python 3.12.14 environment; pip check passes. The automated suite passes 109 tests, including 29 new regressions, and the controlled stdio fixture passes 12 assertions. Capability audits and all existing replay ASR/BCAR/F1 results were reproduced without change. Boundary coverage is 16 distinct malicious and 8 distinct benign calls, repeated three times; no population bound is inferred from these repetitions.

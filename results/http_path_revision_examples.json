@@ -1,0 +1,117 @@
+[
+  {
+    "name": "http_request_download",
+    "arguments": {
+      "url": "https://docs.python.org/3/",
+      "path": "/tmp/output.json"
+    },
+    "categories": [
+      "fs.write",
+      "net.http"
+    ],
+    "high_risk": false,
+    "reasons": {
+      "net.http": [
+        "name:http_request",
+        "arg_network:url"
+      ],
+      "fs.write": [
+        "arg_path_write:path"
+      ]
+    },
+    "decision": "deny"
+  },
+  {
+    "name": "http_request",
+    "arguments": {
+      "url": "https://docs.python.org/3/",
+      "path": "/tmp/output.json"
+    },
+    "categories": [
+      "code.exec",
+      "fs.read",
+      "net.http"
+    ],
+    "high_risk": true,
+    "reasons": {
+      "net.http": [
+        "name:http_request",
+        "arg_network:url"
+      ],
+      "fs.read": [
+        "arg_path_read:path"
+      ],
+      "code.exec": [
+        "ambiguous_resource_intent_fail_closed"
+      ]
+    },
+    "decision": "deny"
+  },
+  {
+    "name": "http_request",
+    "arguments": {
+      "host": "api.github.com",
+      "path": "/zen"
+    },
+    "categories": [
+      "code.exec",
+      "fs.read",
+      "net.http"
+    ],
+    "high_risk": true,
+    "reasons": {
+      "net.http": [
+        "name:http_request",
+        "arg_network:host"
+      ],
+      "fs.read": [
+        "arg_path_read:path"
+      ],
+      "code.exec": [
+        "ambiguous_resource_intent_fail_closed"
+      ]
+    },
+    "decision": "deny"
+  },
+  {
+    "name": "http_request",
+    "arguments": {
+      "host": "api.github.com",
+      "request_path": "/zen"
+    },
+    "categories": [
+      "net.http"
+    ],
+    "high_risk": false,
+    "reasons": {
+      "net.http": [
+        "name:http_request",
+        "arg_network:host"
+      ]
+    },
+    "decision": "allow"
+  },
+  {
+    "name": "http_request",
+    "arguments": {
+      "url": "https://docs.python.org/3/",
+      "request_path": "/3/",
+      "output_path": "/tmp/output.json"
+    },
+    "categories": [
+      "fs.write",
+      "net.http"
+    ],
+    "high_risk": false,
+    "reasons": {
+      "net.http": [
+        "name:http_request",
+        "arg_network:url"
+      ],
+      "fs.write": [
+        "arg_path_write:output_path"
+      ]
+    },
+    "decision": "deny"
+  }
+]

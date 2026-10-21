@@ -245,14 +245,18 @@ def is_network_resource(value: Any, key_hint: str | None = None) -> bool:
 
 def is_network_route(tool_name: str, arguments: Any, path_parts: tuple[str, ...],
                      key_hint: str | None, value: Any) -> bool:
-    """Recognize an HTTP route only with a destination in the same request object.
+    """Recognize explicit route fields, never infer route intent from generic path.
 
-    Generic network names and download destinations do not establish route intent.
+    A sibling URL/host provides destination context, not filesystem semantics.
+    Download/write signals override route hints; unresolved generic paths retain
+    normal filesystem inference and fail-closed uncertainty handling.
     """
+    if is_write_operation(tool_name) or tool_name_matches(tool_name, "download"):
+        return False
     if not any(tool_name_matches(tool_name, n) for n in
                ("http_request", "api_call", "send_request", "post_request")):
         return False
-    if _norm_key(key_hint) not in {"path", "route", "request_path"}:
+    if _norm_key(key_hint) not in {"route", "request_path"}:
         return False
     if not isinstance(value, str) or not value.startswith("/") or value.startswith("//"):
         return False
