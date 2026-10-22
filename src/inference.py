@@ -358,6 +358,8 @@ def infer_categories(
     tool_name: str,
     arguments: dict[str, Any] | None = None,
     config: InferenceConfig | None = None,
+    *,
+    trusted_route_paths: frozenset[tuple[str, ...]] = frozenset(),
 ) -> InferenceResult:
     """Infer permission categories for a tool call."""
     cfg = config or DEFAULT_INFERENCE_CONFIG
@@ -390,7 +392,7 @@ def infer_categories(
 
             domain = canonicalize_domain(value, key)
             is_network_value = is_network_resource(value, key)
-            is_route = is_network_route(tool_name, arguments, path_parts, key, value)
+            is_route = (path_parts in trusted_route_paths and not write_by_name) or is_network_route(tool_name, arguments, path_parts, key, value)
 
             # Reviewer 3 mechanism audit: a URL such as https://example.com/path
             # is a network destination, not a filesystem path merely because it

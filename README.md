@@ -1,6 +1,6 @@
 # MCP Permission Layer — Revised Reproducibility Artifact
 
-The latest [HTTP path correction](HTTP_PATH_REVISION.md) removes generic-path route inference, passes 128 tests, and updates stress/boundary authorization results.
+The [HTTP path correction](HTTP_PATH_REVISION.md) preserves fail-closed default handling of generic paths. The additional [optional trusted HTTP contract study](TRUSTED_HTTP_CONTRACT_STUDY.md) evaluates an administrator-approved reference adapter separately; the full suite now passes 154 tests. Default and contract-enabled results are reported separately.
 
 The complete pinned Table 8 live rerun (100 known authorization outcomes) is available in [results/table8_pinned_rerun](results/table8_pinned_rerun/README.md), with exact installation commands, receipts, audit logs and execution-error disclosures. It supersedes the historical Table 8 measurements.
 

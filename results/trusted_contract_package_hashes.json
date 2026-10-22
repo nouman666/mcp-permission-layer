@@ -1,0 +1,18 @@
+{
+  "TRUSTED_HTTP_CONTRACT_STUDY.md": "3828cfd5e5ad847665683c6a7fcec8be8d89dd9eb89e0401c331a66c3741e1ca",
+  "src/checker.py": "0d855012715f3bb25d86a386e146472166f019bd9be6f0570d86f5f31abbe281",
+  "src/inference.py": "9ba3b944cf49fdfa2344e819ec2f607227c29dc0b69a0bb51ad6f2e8c69223b4",
+  "src/trusted_http_contract.py": "24f57cf3761d0da6c8f7aa754af5d0dabbb274561df15141da3d060263d42768",
+  "servers/contract_http_server.py": "ee4e74fd9b56213efba1d21c26567ab3d35e11d6634416273d962f704b6358d5",
+  "configs/approved_http_route_reference.json": "8efeb997ec9cf2b1bb23b34706613a756a42b8aaf64d134670da708f3093642a",
+  "scripts/serve_approved_http.py": "36c0e822f8ac3314616d3c478238de4c066c059ee38fccf736b488cd8b48264b",
+  "scripts/evaluate_trusted_http_contract.py": "c96d3a9158cf90a511f0042480e7a29612cff3acd16dc0161e16a3af2f0f5c9a",
+  "scripts/smoke_approved_http.py": "0200549396db179f2b0dbbffdc337cf9dd586d0ee3dbdf6f937bf99c610a2641",
+  "tests/test_trusted_http_contract.py": "1c4544cfe1dea59c1f0214292becef718fb1e9f03d6890fe70bd6e35accb9332",
+  "results/trusted_contract_pytest.txt": "bd9bd1d999ebcdfa815374275a070acf338e52f3c07ffb7a82edce7d2cdfa041",
+  "results/trusted_contract_live_smoke.json": "2778811c81ae465c34077abcb452107e25787954ce3561114e7f7f61139ae9d6",
+  "results/trusted_contract_live_audit.jsonl": "d019cc7a36b7d28fd609899a174364497294bef37a9b860a417441e9398e3a49",
+  "results/trusted_contract_study/summary.json": "85e95f4d208a8c05a5eef2a0a35f5395b2f769e0699c8a82af8a015b60ef7b44",
+  "README.md": "9043938cd8df786bccbf47dd43213daf0b13b24a9bae0ea48857fa1a9d707f44",
+  "results/trusted_contract_study/decision_changes.zip": "43471a0a9d87cc34468a25e557b7c1bc56fb98f5524f3db83a23a36d21675494"
+}

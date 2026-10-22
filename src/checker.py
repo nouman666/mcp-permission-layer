@@ -55,18 +55,35 @@ class PermissionChecker:
         use_domain_allow_list: bool = True,
         force_default_allow: bool = False,
         path_root: Path | None = None,
+        trusted_http_route=None,
     ) -> None:
         self.path_root = path_root.resolve() if path_root is not None else None
         self.inference_config = inference_config or DEFAULT_INFERENCE_CONFIG
         self.use_domain_allow_list = use_domain_allow_list
         self.force_default_allow = force_default_allow
+        # Administrator-owned binding for this checker/dispatcher, not call metadata.
+        self.trusted_http_route = trusted_http_route
 
     def evaluate(self, tool_call: ToolCall, policy: Policy) -> tuple[Decision, DecisionRecord]:
         start = time.perf_counter()
+        trusted_paths = frozenset()
+        contract_error = None
+        if self.trusted_http_route is not None:
+            from trusted_http_contract import ContractMismatch
+            try:
+                trusted_paths = self.trusted_http_route.route_paths(tool_call.name, tool_call.arguments)
+            except ContractMismatch as exc:
+                contract_error = str(exc)
 
+        inference_kwargs = {'trusted_route_paths': trusted_paths} if trusted_paths else {}
         inference: InferenceResult = infer_categories(
-            tool_call.name, tool_call.arguments, config=self.inference_config
+            tool_call.name, tool_call.arguments, config=self.inference_config, **inference_kwargs
         )
+        if trusted_paths:
+            inference.add('net.http', 'administrator_pinned_route_contract')
+        if contract_error is not None:
+            inference.add('code.exec', 'trusted_contract_mismatch:' + contract_error)
+            inference.high_risk = True
 
         if not inference.categories and self.force_default_allow:
             latency_ms = (time.perf_counter() - start) * 1000.0
@@ -92,6 +109,8 @@ class PermissionChecker:
                 rule = replace(rule, deny_paths=list(rule.deny_paths) + list(policy.sensitive_paths))
             category_decisions[cat] = self._evaluate_rule(tool_call, rule, cat)
 
+        if contract_error is not None:
+            category_decisions['code.exec'] = Decision.DENY
         final = self._aggregate(category_decisions)
         latency_ms = (time.perf_counter() - start) * 1000.0
 

@@ -1,0 +1,7 @@
+{
+  "experiment": "New opt-in reference adapter; not historical deployment",
+  "source": "servers/contract_http_server.py",
+  "sha256": "ee4e74fd9b56213efba1d21c26567ab3d35e11d6634416273d962f704b6358d5",
+  "tool": "http_request",
+  "scope": "Flat host/path or nested request.host/request.path; HTTPS GET, no redirects"
+}
